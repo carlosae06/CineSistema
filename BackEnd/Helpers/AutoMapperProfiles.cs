@@ -126,7 +126,7 @@ namespace BackEnd.Helpers
             CreateMap<Usuario, UsuarioDTO>()
                  .ForMember(x => x.RolCod, x => x.MapFrom(y => y.IdRolNavigation == null ? "" : y.IdRolNavigation.Cod))
                   .ForMember(x => x.RolNombre, x => x.MapFrom(y => y.IdRolNavigation == null ? "" : y.IdRolNavigation.Nombre));
-
+            
         }
     
     }

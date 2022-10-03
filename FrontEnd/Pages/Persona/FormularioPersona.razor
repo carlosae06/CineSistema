@@ -1,64 +1,51 @@
 ﻿
-<EditForm Model="personaInsert" OnValidSubmit="guardar">
+<EditForm Model="@model" OnValidSubmit="@OnValidSubmit">
     <DataAnnotationsValidator></DataAnnotationsValidator>
     <div class="row">
         <label for="ci">Ci:</label>
-        <InputText id="ci" class="form-control" @bind-Value="personaInsert.Ci"></InputText>
-        <ValidationMessage For="@(()=> personaInsert.Ci)" />
+        <InputText id="ci" class="form-control" @bind-Value="model.Ci"></InputText>
+        <ValidationMessage For="@(()=> model.Ci)" />
     </div>
     <div class="row" >
          <label for="nombre" >Nombre:</label>
-        <InputText id="nombre" class="form-control" @bind-Value="personaInsert.Nombre"></InputText>
-        <ValidationMessage For="@(()=> personaInsert.Nombre)" />
+        <InputText id="nombre" class="form-control" @bind-Value="model.Nombre"></InputText>
+        <ValidationMessage For="@(()=> model.Nombre)" />
     </div>
  
     <div class="row" >
          <label for="nombre" >Apellido Paterno:</label>
-        <InputText id="apellidoPaterno" class="form-control" @bind-Value="personaInsert.ApellidoPaterno"></InputText>
-        <ValidationMessage For="@(()=> personaInsert.ApellidoPaterno)" />
+        <InputText id="apellidoPaterno" class="form-control" @bind-Value="model.ApellidoPaterno"></InputText>
+        <ValidationMessage For="@(()=> model.ApellidoPaterno)" />
     </div>
     <div class="row">
         <label for="nombre">Apellido Materno:</label>
-        <InputText id="apellidoMaterno" class="form-control" @bind-Value="personaInsert.ApellidoMaterno"></InputText>
-        <ValidationMessage For="@(()=> personaInsert.ApellidoMaterno)" />
+        <InputText id="apellidoMaterno" class="form-control" @bind-Value="model.ApellidoMaterno"></InputText>
+        <ValidationMessage For="@(()=> model.ApellidoMaterno)" />
     </div>
      <div class="row">
         <label for="nombre">Telefono:</label>
-        <InputText id="telefono" class="form-control" @bind-Value="personaInsert.Telefono"></InputText>
-        <ValidationMessage For="@(()=> personaInsert.Telefono)" />
+        <InputText id="telefono" class="form-control" @bind-Value="model.Telefono"></InputText>
+        <ValidationMessage For="@(()=> model.Telefono)" />
     </div>
-    @if (modo == "Modificar")
-    {
-          @*   <div class="mb-3 row">
-
-            <label for="url">Nombre:</label>
-             <div class="col-sm-8">
-                <InputCheckbox id="nombre" class="form-control" @bind-Value="@personaInsert.Nombre"></InputCheckbox>
-                <ValidationMessage For="@(()=> personaInsert.Nombre)" />
-             </div>
-
-             </div>*@
-    }
-
     <br />
     <div class="row" >
-         <button type="submit" class="btn btn-primary" >Guardar</button>
+        <button class="btn btn-primary" type="submit">Guardar</button>
+        <button type="button" @onclick="onCancel" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+
     </div>
 
 
 </EditForm>
 
 @code {
-
     [Parameter] public string modo { get; set; } = "crear";
-    private DTOs.Persona.PersonaActualizarDTO personaInsert = new DTOs.Persona.PersonaActualizarDTO();
+    [Parameter] public EventCallback OnValidSubmit { get; set; }
+    [Parameter] public EventCallback onCancel { get; set; }
+    [Parameter] public DTOs.Persona.PersonaActualizarDTO model { get; set; }
 
     private async Task guardar()
     {
-
-
         await Task.Delay(2000);
-
     }
 
 }

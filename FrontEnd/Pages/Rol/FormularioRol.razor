@@ -1,34 +1,21 @@
 ﻿
-
-
-<EditForm Model="rolInsert" OnValidSubmit="guardar">
+<EditForm Model="@model" OnValidSubmit="@OnValidSubmit">
     <DataAnnotationsValidator></DataAnnotationsValidator>
     <div class="row">
         <label for="nombre">COD:</label>
-        <InputText id="cod" class="form-control" @bind-Value="rolInsert.Cod"></InputText>
-        <ValidationMessage For="@(()=> rolInsert.Cod)" />
+        <InputText id="cod" class="form-control" @bind-Value="model.Cod"></InputText>
+        <ValidationMessage For="@(()=> model.Cod)" />
     </div>
      <div class="row">
         <label for="nombre">Nombre:</label>
-        <InputText id="nombre" class="form-control" @bind-Value="rolInsert.Nombre"></InputText>
-        <ValidationMessage For="@(()=> rolInsert.Nombre)" />
+        <InputText id="nombre" class="form-control" @bind-Value="model.Nombre"></InputText>
+        <ValidationMessage For="@(()=> model.Nombre)" />
     </div>
-    @if (modo == "Modificar")
-    {
-        <div class="mb-3 row">
-
-            <label for="url">Estado:</label>
-            <div class="col-sm-8">
-                <InputCheckbox id="estado" class="form-control" @bind-Value="@rolInsert.Estado"></InputCheckbox>
-                <ValidationMessage For="@(()=> rolInsert.Estado)" />
-            </div>
-
-        </div>
-    }
-
+   
     <br />
     <div class="row">
-        <button type="submit" class="btn btn-primary">Guardar</button>
+        <button class="btn btn-primary" type="submit">Guardar</button>
+        <button type="button" @onclick="onCancel" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
     </div>
 
 
@@ -37,7 +24,10 @@
 @code {
 
     [Parameter] public string modo { get; set; } = "crear";
-    private DTOs.Rol.RolActualizarDTO rolInsert = new DTOs.Rol.RolActualizarDTO();
+    [Parameter] public EventCallback OnValidSubmit { get; set; }
+    [Parameter] public EventCallback onCancel { get; set; }
+    [Parameter] public DTOs.Rol.RolActualizarDTO model { get; set; }
+
 
     private async Task guardar()
     {

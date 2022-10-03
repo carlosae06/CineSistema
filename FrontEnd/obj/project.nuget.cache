@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "WZOdu52219luaeiERhDK0Vs6XGtB3O44WQs73TjKN2ijSjDCYOohJrDQ8kc0i96s48tLk/mWJFcsSDvsvquS7w==",
+  "dgSpecHash": "EUYPp2Pp7m72hmTcrWnpuQA7vEUHBF3xgjCk/b3bB5MaGN09l+37Y3CUB4J2fHk4owviGRElpjCaCsjmfjEFmA==",
   "success": true,
-  "projectFilePath": "C:\\IIS EXPRESS\\SistemaCine\\FrontEnd\\FrontEnd.csproj",
+  "projectFilePath": "C:\\IIS EXPRESS\\CineSistema\\CineSistema\\FrontEnd\\FrontEnd.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\carlos\\.nuget\\packages\\microsoft.aspnetcore.authorization\\6.0.9\\microsoft.aspnetcore.authorization.6.0.9.nupkg.sha512",
     "C:\\Users\\carlos\\.nuget\\packages\\microsoft.aspnetcore.components\\6.0.9\\microsoft.aspnetcore.components.6.0.9.nupkg.sha512",

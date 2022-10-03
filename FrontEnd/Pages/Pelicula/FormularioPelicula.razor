@@ -1,77 +1,64 @@
 ﻿
 
-<EditForm Model="peliculaInsertar" OnValidSubmit="guardar" >
+<EditForm Model="@model" OnValidSubmit="@OnValidSubmit">
     <DataAnnotationsValidator></DataAnnotationsValidator>
     <div class="row" >
          <label for="nombre" >Nombre:</label>
-         <InputText id="nombre" class="form-control" @bind-Value="peliculaInsertar.Nombre" ></InputText>
-        <ValidationMessage For="@(()=> peliculaInsertar.Nombre)" />
+         <InputText id="nombre" class="form-control" @bind-Value="model.Nombre" ></InputText>
+        <ValidationMessage For="@(()=> model.Nombre)" />
     </div>
     <div class="row" >
         <label for="clasificacion">Clasificacion:</label>
-        <InputText id="clasificacion" class="form-control" @bind-Value="peliculaInsertar.Clasificacion"></InputText>
-        <ValidationMessage For="@(()=> peliculaInsertar.Clasificacion)" />
+        <InputText id="clasificacion" class="form-control" @bind-Value="model.Clasificacion"></InputText>
+        <ValidationMessage For="@(()=> model.Clasificacion)" />
     </div>
 
       <div class="row" >
          <label for="fecha" >Fecha De Estreno:</label>
-         <InputDate  id="fecha" class="form-control" @bind-Value="peliculaInsertar.FechaEstreno" ></InputDate>
-         <ValidationMessage For="@(()=> peliculaInsertar.FechaEstreno)" />
+        <InputDate id="fecha" class="form-control" @bind-Value="model.FechaEstreno"></InputDate>
+         <ValidationMessage For="@(()=> model.FechaEstreno)" />
     </div>
 
     <div class="row" >
          <label for="protagonista" >Protagonista:</label>
-         <InputText typeof="protagonista" id="email" class="form-control" @bind-Value="peliculaInsertar.Protagonista" ></InputText>
-        <ValidationMessage For="@(()=> peliculaInsertar.Protagonista)" />
+        <InputText typeof="protagonista" id="email" class="form-control" @bind-Value="model.Protagonista"></InputText>
+        <ValidationMessage For="@(()=> model.Protagonista)" />
     </div>
    
 
      <div class="row" >
          <label for="director" >Director:</label>
-        <InputText id="director" class="form-control" @bind-Value="peliculaInsertar.Director"></InputText>
-        <ValidationMessage For="@(()=> peliculaInsertar.Director)" />
+        <InputText id="director" class="form-control" @bind-Value="model.Director"></InputText>
+        <ValidationMessage For="@(()=> model.Director)" />
     </div>
 
       <div class="row" >
         <label for="idioma">Idioma:</label>
-        <InputText id="idioma" class="form-control" @bind-Value="peliculaInsertar.Idioma"></InputText>
-         <ValidationMessage For="@(()=> peliculaInsertar.Idioma)" />
+        <InputText id="idioma" class="form-control" @bind-Value="model.Idioma"></InputText>
+        <ValidationMessage For="@(()=> model.Idioma)" />
     </div>
 
          <div class="row" >
         <label for="duracion">Duracion:</label>
-        <InputText id="duracion" class="form-control" @bind-Value="peliculaInsertar.Duracion"></InputText>
-        <ValidationMessage For="@(()=> peliculaInsertar.Duracion)" />
+        <InputText id="duracion" class="form-control" @bind-Value="model.Duracion"></InputText>
+        <ValidationMessage For="@(()=> model.Duracion)" />
     </div>
 
     <div class="row">
         <label for="sinopsis">Sinopsis:</label>
-        <InputText id="sinopsis" class="form-control" @bind-Value="peliculaInsertar.Sinopsis"></InputText>
-        <ValidationMessage For="@(()=> peliculaInsertar.Sinopsis)" />
+        <InputText id="sinopsis" class="form-control" @bind-Value="model.Sinopsis"></InputText>
+        <ValidationMessage For="@(()=> model.Sinopsis)" />
     </div>
       <div class="row">
         <label for="idCategoria">Categoria:</label>
-        <InputNumber id="idCategoria" class="form-control" @bind-Value="peliculaInsertar.IdCategoria"></InputNumber>
-        <ValidationMessage For="@(()=> peliculaInsertar.IdCategoria)" />
+        <InputNumber id="idCategoria" class="form-control" @bind-Value="model.IdCategoria"></InputNumber>
+        <ValidationMessage For="@(()=> model.IdCategoria)" />
     </div>
-
-    @if (modo == "Modificar")
-    {
-         <div class="mb-3 row">
-         
-         <label for="url" >Estado:</label>
-         <div class="col-sm-8">
-                <InputCheckbox id="estado" class="form-control" @bind-Value="@peliculaInsertar.Estado"></InputCheckbox>
-                <ValidationMessage For="@(()=> peliculaInsertar.Estado)" />
-         </div>
-        
-         </div>
-    }
 
     <br />
-    <div class="row" >
-         <button type="submit" class="btn btn-primary" >Guardar</button>
-    </div>
+    <button class="btn btn-primary" type="submit">Guardar</button>
+    <button type="button" @onclick="onCancel" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+ 
    
 
 </EditForm>
@@ -80,6 +67,11 @@
 
 @code {
     [Parameter] public string modo { get; set; } = "crear";
+
+    [Parameter] public EventCallback OnValidSubmit { get; set; }
+    [Parameter] public EventCallback onCancel { get; set; }
+    [Parameter] public DTOs.Pelicula.PeliculaActualizarDTO model { get; set; }
+
     private DTOs.Pelicula.PeliculaActualizarDTO peliculaInsertar = new DTOs.Pelicula.PeliculaActualizarDTO();
 
     private async Task guardar()

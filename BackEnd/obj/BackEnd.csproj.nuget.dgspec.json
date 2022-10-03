@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\IIS EXPRESS\\SistemaCine\\BackEnd\\BackEnd.csproj": {}
+    "C:\\IIS EXPRESS\\CineSistema\\CineSistema\\BackEnd\\BackEnd.csproj": {}
   },
   "projects": {
-    "C:\\IIS EXPRESS\\SistemaCine\\BackEnd\\BackEnd.csproj": {
+    "C:\\IIS EXPRESS\\CineSistema\\CineSistema\\BackEnd\\BackEnd.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\IIS EXPRESS\\SistemaCine\\BackEnd\\BackEnd.csproj",
+        "projectUniqueName": "C:\\IIS EXPRESS\\CineSistema\\CineSistema\\BackEnd\\BackEnd.csproj",
         "projectName": "BackEnd",
-        "projectPath": "C:\\IIS EXPRESS\\SistemaCine\\BackEnd\\BackEnd.csproj",
+        "projectPath": "C:\\IIS EXPRESS\\CineSistema\\CineSistema\\BackEnd\\BackEnd.csproj",
         "packagesPath": "C:\\Users\\carlos\\.nuget\\packages\\",
-        "outputPath": "C:\\IIS EXPRESS\\SistemaCine\\BackEnd\\obj\\",
+        "outputPath": "C:\\IIS EXPRESS\\CineSistema\\CineSistema\\BackEnd\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

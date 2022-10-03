@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "gr4z5ZueWea5aZZwg4kZ1/DWgrfZK978jx09pME95ccxl+WYK/AGYuW1t6Zv2kylg20jb1K54HO61BdreDCSBg==",
+  "dgSpecHash": "2lUeIqFudYJrpa7DpS2WEjI6ZwQNemgz9U1OPvgVDTTQogo9wOoZpSMEf/I6mz8OG+ht9KYhI59MKvowYUvwug==",
   "success": true,
-  "projectFilePath": "C:\\IIS EXPRESS\\SistemaCine\\BackEnd\\BackEnd.csproj",
+  "projectFilePath": "C:\\IIS EXPRESS\\CineSistema\\CineSistema\\BackEnd\\BackEnd.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\carlos\\.nuget\\packages\\automapper\\11.0.0\\automapper.11.0.0.nupkg.sha512",
     "C:\\Users\\carlos\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\11.0.0\\automapper.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512",
